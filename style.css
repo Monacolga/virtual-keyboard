@@ -34,3 +34,32 @@ body {
   height: 50px;
   margin: 3px;
 }
+
+.key_s {
+  width: 65px;
+}
+
+.key_m {
+  width: 80px;
+}
+
+.key_l {
+  width: 93px;
+}
+
+.key_xl {
+  width: 93px;
+}
+
+.key_xl_first {
+  width: 121px;
+}
+
+.key_xxl {
+  width: 210px;
+}
+
+.keyboard-key.active {
+  background-color: rgb(126, 126, 198);
+  color: white;
+}

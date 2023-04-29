@@ -72,3 +72,52 @@ function addKeyboardToPage() {
 }
 
 addKeyboardToPage();
+
+/////////////////////////
+
+// get all buttons on the page
+const buttons = document.querySelectorAll("button");
+
+// add extra class to some buttons
+buttons.forEach((button) => {
+  if (button.textContent === "shift") {
+    button.classList.add("key_s");
+  }
+  if (button.textContent === "option") {
+    button.classList.add("key_s");
+  }
+  if (button.textContent === "►") {
+    button.classList.add("key_s");
+  }
+  if (button.textContent === "◄") {
+    button.classList.add("key_s");
+  }
+  if (button.textContent === "delete") {
+    button.classList.add("key_m");
+  }
+  if (button.textContent === "tab") {
+    button.classList.add("key_m");
+  }
+  if (button.textContent === "return") {
+    button.classList.add("key_m");
+  }
+  if (button.textContent === "control") {
+    button.classList.add("key_m");
+  }
+  if (button.textContent === "command") {
+    button.classList.add("key_m");
+  }
+  if (button.textContent === "capslock") {
+    button.classList.add("key_l");
+  }
+  if (button.textContent === "return") {
+    button.classList.add("key_xl");
+  }
+  if (button.textContent === " ") {
+    button.innerHTML = "&nbsp;";
+    button.classList.add("key_xxl");
+  }
+  if (document.querySelectorAll(".key_s").length > 0) {
+    document.querySelectorAll(".key_s")[0].classList.add("key_xl_first");
+  }
+});
