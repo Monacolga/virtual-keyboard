@@ -121,3 +121,33 @@ buttons.forEach((button) => {
     document.querySelectorAll(".key_s")[0].classList.add("key_xl_first");
   }
 });
+/////////////////////
+const keyboardKeys = document.querySelectorAll(".keyboard-key");
+
+// add event listener for keydown
+document.addEventListener("keydown", (event) => {
+  // find match key on both keyboards
+  const matchingKey = Array.from(keyboardKeys).find((key) => {
+    return key.textContent.toLowerCase() === event.key.toLowerCase();
+  });
+
+  // add class for button
+  if (matchingKey) {
+    matchingKey.classList.add("active");
+  }
+});
+
+// add event listener for keyup
+document.addEventListener("keyup", (event) => {
+  // find match key on both keyboards
+  const matchingKey = Array.from(keyboardKeys).find((key) => {
+    return key.textContent.toLowerCase() === event.key.toLowerCase();
+  });
+
+  // remove class for button
+  if (matchingKey) {
+    matchingKey.classList.remove("active");
+  }
+});
+
+///////////////////
