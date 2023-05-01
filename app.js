@@ -54,6 +54,17 @@ function createKeyboard(keysArray, output) {
               button.textContent = button.textContent.toUpperCase();
             }
           });
+        } else if (keyElement.textContent === "return") {
+          output.value += "\n"; // Add new line character
+        } else if (keyElement.textContent === "tab") {
+          const selectionStart = output.selectionStart;
+          const selectionEnd = output.selectionEnd;
+          output.value =
+            output.value.substring(0, selectionStart) +
+            "  " +
+            output.value.substring(selectionEnd);
+          output.selectionStart = selectionEnd + 3;
+          output.selectionEnd = output.selectionStart;
         } else {
           output.value += keyElement.textContent;
         }
@@ -158,5 +169,3 @@ document.addEventListener("keyup", (event) => {
     matchingKey.classList.remove("active");
   }
 });
-
-///////////////////
