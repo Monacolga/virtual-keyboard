@@ -33,6 +33,14 @@ body {
   width: 50px;
   height: 50px;
   margin: 3px;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  transition: all 0.2s ease;
+}
+
+.keyboard-key:active {
+  border-radius: 25%;
+  background-color: #7882d0;
 }
 
 .key_s {
@@ -62,4 +70,9 @@ body {
 .keyboard-key.active {
   background-color: rgb(126, 126, 198);
   color: white;
+}
+
+.keyboard-key:active {
+  border-radius: 25%;
+  background-color: #7882d0;
 }

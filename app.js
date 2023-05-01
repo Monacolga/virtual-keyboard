@@ -5,6 +5,13 @@ const englishKeys = [
   ["shift", "z", "x", "c", "v", "b", "n", "m", ",", ".", "/", "▲", "shift"],
   ["control", "option", "command", " ", "command", "option", "◄", "▼", "►"],
 ];
+const wrapper = createWrapper();
+const output = createOutput();
+const keyboard = createKeyboard(englishKeys, output);
+
+wrapper.appendChild(output);
+wrapper.appendChild(keyboard);
+document.body.appendChild(wrapper);
 
 // create wrapper for keyboard and output
 function createWrapper() {
@@ -48,6 +55,12 @@ function createKeyboard(keysArray, output) {
         } else {
           output.value += keyElement.textContent;
         }
+
+        // add pressed class
+        keyElement.classList.add("pressed");
+        setTimeout(() => {
+          keyElement.classList.remove("pressed");
+        }, 200);
       });
 
       rowElement.appendChild(keyElement);
@@ -58,20 +71,6 @@ function createKeyboard(keysArray, output) {
 
   return keyboardElement;
 }
-
-// add keyboard to page
-function addKeyboardToPage() {
-  const outputElement = createOutput();
-  const keyboardElement = createKeyboard(englishKeys, outputElement);
-  const wrapperElement = createWrapper();
-
-  wrapperElement.appendChild(outputElement);
-  wrapperElement.appendChild(keyboardElement);
-
-  document.body.appendChild(wrapperElement);
-}
-
-addKeyboardToPage();
 
 /////////////////////////
 
