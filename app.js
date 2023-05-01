@@ -8,10 +8,12 @@ const englishKeys = [
 const wrapper = createWrapper();
 const output = createOutput();
 const keyboard = createKeyboard(englishKeys, output);
+const description = createDescription();
 
 wrapper.appendChild(output);
 wrapper.appendChild(keyboard);
 document.body.appendChild(wrapper);
+document.body.appendChild(description);
 
 // create wrapper for keyboard and output
 function createWrapper() {
@@ -70,6 +72,14 @@ function createKeyboard(keysArray, output) {
   });
 
   return keyboardElement;
+}
+
+function createDescription() {
+  const descriptionElement = document.createElement("p");
+  descriptionElement.classList.add("description");
+  descriptionElement.textContent =
+    "Клавиатура создана в операционной системе Mac IOS. Раскладка только английская, не все кнопки работают корректно (работа выполнена частично)";
+  return descriptionElement;
 }
 
 /////////////////////////
