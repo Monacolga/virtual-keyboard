@@ -157,6 +157,21 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+document.addEventListener("keydown", (event) => {
+  // Get the value of the key that was pressed
+  const key = event.key;
+
+  // Find the button element that matches the pressed key
+  const matchingButton = Array.from(keyboardKeys).find(
+    (button) => button.textContent === key
+  );
+
+  // If a matching button was found, simulate a click on it
+  if (matchingButton) {
+    matchingButton.click();
+  }
+});
+
 // add event listener for keyup
 document.addEventListener("keyup", (event) => {
   // find match key on both keyboards
